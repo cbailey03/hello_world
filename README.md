@@ -35,3 +35,18 @@ Can be used again if more changes are made.
 ---
     Create pull requests in github.com. You can merge and delete the
     branch remotely. After that, you need to checkout a new branch.
+---
+### Squash commits workflow
+You want do to this before you publish the commits to your branch.
+This is a helpful workflow to combining a bunch of small commits
+into a readable single commit.
+1. Show simple commit history: `git log --online`
+2. Count the amount of commits you want to combine below your HEAD.
+3. Rebase commits: `git rebase -i HEAD~#` where "#" is the number of
+commits you want to combine.
+4. A dialog should open allowing you to **"pick"** or **"squash"** commits.
+Keep the first commit as **"pick"**. Set the other commits to 
+**"squash"** or **"s"** for short. Save and close the dialog.
+5. The commit message dialog should open. Delete out what is in the 
+message. Write your own message and description. Save and close the
+dialog.
